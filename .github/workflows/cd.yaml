@@ -54,13 +54,6 @@ jobs:
       with:
         time: 30s
 
-  deploy-ansible:
-    name: Deploy ansible
-    needs: deploy-terraform
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v1
-    
     - name: generate secret cert for ansible
       run: |
           echo ${{ secrets.ANSIBLE_SECRET_FILE }} | base64 -d > ansible/swarm.cer
