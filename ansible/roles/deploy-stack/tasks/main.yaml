@@ -1,0 +1,11 @@
+- name: copy the stack template to the remote host
+  copy:
+    src: "docker-compose.yaml"
+    dest: "/opt/docker-compose.yaml"
+
+- name: Deploy stack from a compose file
+  docker_stack:
+    state: present
+    name: webserver
+    compose:
+      - /opt/docker-compose.yaml
