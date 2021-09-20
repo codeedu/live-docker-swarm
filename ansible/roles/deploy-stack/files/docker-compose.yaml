@@ -2,12 +2,12 @@ version: '3'
 
 services: 
   webserver:
-    image: wesleywillians/esquenta4-webserver
+    image: wesleywillians/domingao-fc:latest
     ports:
       - "80:8080"
     deploy:
       mode: replicated
-      replicas: 7
+      replicas: 5
       restart_policy: 
         condition: on-failure
       
